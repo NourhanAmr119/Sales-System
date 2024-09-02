@@ -1,0 +1,111 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    String[] TableHeaders = new string[]
+    {
+        "Customer_Name",
+            "Quantity",
+            "Region",
+            "Product_Name"
+
+                };
+}
+
+<head>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        select {
+            background-color: #3498DB;
+            color: white;
+            padding: 10px;
+            font-size: 12px;
+            border: none;
+            cursor: pointer
+        }
+    </style>
+</head>
+<body>
+    <div class="text-center">
+        <h1 class="display-4">Sales Report</h1>
+        <div>
+            <label for="Sales">Choose the First Paramater:</label>
+
+            <select name="Sales" id="Sales">
+                <option value="Customer_Name">Customer_Name</option>
+                <option value="Quantity">Quantity</option>
+                <option value="Region">Region</option>
+                <option value="Product_Name">Product_Name</option>
+            </select>
+
+            <label for="Sales">Choose the Second Paramater:</label>
+
+            <select name="Sales" id="Sales2">
+                <option value="Customer_Name">Customer_Name</option>
+                <option value="Quantity">Quantity</option>
+                <option value="Region">Region</option>
+                <option value="Product_Name">Product_Name</option>
+
+            </select>
+        </div>
+        <br />
+        <div>
+            <label for="Sales3">Choose the Third Paramater:</label>
+
+            <select name="Sales" id="Sales3">
+                <option value="Customer_Name">Customer_Name</option>
+                <option value="Quantity">Quantity</option>
+                <option value="Region">Region</option>
+                <option value="Product_Name">Product_Name</option>
+
+            </select>
+
+            <label for="Sales4">Choose the Fourth Paramater:</label>
+
+            <select name="Sales" id="Sales4">
+                <option value="Customer_Name">Customer_Name</option>
+                <option value="Quantity">Quantity</option>
+                <option value="Region">Region</option>
+                <option value="Product_Name">Product_Name</option>
+            </select>
+        </div>
+        <br />
+        <a class="btn" href="../Home/salesInfo" target="_blank">sales Info</a>
+    </div>
+
+    <br />
+    <table style="border: 1px solid black; border-collapse: collapse; width: 70% ">
+        <thead>
+            <tr>
+                @{
+                    foreach (var head in TableHeaders)
+                    {
+                        <th>
+                            @head;
+                        </th>
+
+                    }
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                if (Model != null)
+                {
+                    foreach (var Data in Model)
+                    {
+                        <tr>
+                            <td>@Data.Customer_Name</td>
+                            <td>@Data.Quantity</td>
+                            <td>@Data.Region</td>
+                            <td>@Data.Product_Name</td>
+                        </tr>
+                    }
+                }
+            }
+        </tbody>
+    </table>
+    
+</body>

@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApplication8</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+   
+</head>
+
+<body>
+   
+   
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar-->
+       
+    <div class="border-end bg-white" id="sidebar-wrapper">
+            
+        <div>
+                <img style="padding: 5px;width:400px;float:left;" src="~/newfolder/crystal-mind-final-new-logo-02-2.png" />
+        </div>
+        <div class="sidebar-heading border-bottom bg-light">Databases</div>
+        <div class="list-group list-group-flush">
+                
+               <a class="list-group-item list-group-item-action list-group-item-light p-3" asp-area="" asp-controller="Sales" asp-action="Index">Sales</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" asp-area="" asp-controller="Stores" asp-action="Index">Stores</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" asp-area="" asp-controller="Products" asp-action="Index">Products</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" asp-area="" asp-controller="Orders" asp-action="Index">Orders</a>
+               
+            </div> 
+    </div>
+    <!-- Page content wrapper-->
+    <div id="page-content-wrapper">
+        <!-- Top navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                
+                <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">     Crystal Mind</a>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                            <li class="nav-item active">
+                                <a class="nav-link text-dark" class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link text-dark" class="nav-link" asp-area="" asp-controller="Report" asp-action="Sales">Sales</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+            
+        </nav>
+            <div class="container">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
+    </div>
+</div>
+    
+    @RenderSection("Scripts", required: false)
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="~/js/site.js"></script>">
+  </body>
+</html>
